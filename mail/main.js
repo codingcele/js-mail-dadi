@@ -8,15 +8,19 @@ element.addEventListener('click',
         let mail = document.getElementById("mail").value;
 
         for (let i = 0; i <= mailList.length; i++) {
-            if (i === mailList.length) {
-                document.getElementById("checkMail").innerHTML = "Access denied";
+            if (document.getElementById("mail").value === "") {
+                document.getElementById("checkMail").innerHTML = "Please enter your mail.";
             }
-            else if (mail === mailList[i]) {
-                document.getElementById("checkMail").innerHTML = "Access granted.";
-                break
-            }
+            else {
+                if (i === mailList.length) {
+                    document.getElementById("checkMail").innerHTML = "Access denied";
+                }
+                else if (mail === mailList[i]) {
+                    document.getElementById("checkMail").innerHTML = "Access granted.";
+                    break
+                }
+            }            
         }
-
     }
 );
 
